@@ -1,0 +1,10 @@
+@keyframes bt{
+	0%{
+		opacity:.5;
+		-webkit-transform:translate(-50%,0);
+		transform:translate(-50%,0)}
+	100%{
+		opacity:.35;
+		-webkit-transform:translate(120%,0);
+		transform:translate(120%,0)}
+}

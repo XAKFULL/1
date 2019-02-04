@@ -1,0 +1,866 @@
+@charset "UTF-8"
+@import parts/fonts.scss
+@import parts/animations.scss
+$black : black
+$white : white
+$blue : #304fff
+$yellow : #f9d749
+$grey: #c6c8b3
+$greyDown: #fbfafc
+
+.btn
+	text-align: center
+	padding: 10px 50px
+	border-radius: 5px
+	border: none
+	background: linear-gradient(to bottom,#4671fe,#304fff)
+	box-shadow: 0 5px 5px rgba(0,0,0,.3)
+	cursor: pointer
+	display: flex
+	justify-content: center
+	align-items: center
+	color: $white
+	font-weight: 300
+	font-size: 20px
+	&:hover
+		background: linear-gradient(to bottom,#304fff,#0047b3)
+	svg
+		width: 45px
+		height: 45px
+		fill: #fff
+		margin: 0 10px
+.radio-btn
+	&::before
+		display: inline-block
+		content: ''
+		border: solid 5px $blue
+		border-radius: 50%
+		height: 16px
+		width: 16px
+		margin-right: 14px
+.underline
+	text-decoration: underline
+.text-center
+	text-align: center
+.text-right
+	text-align: right
+.text-left
+	text-align: left
+.section
+	padding: 50px 0 0 50px
+	background-repeat: no-repeat
+	min-height: 60vh
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: center
+	position: relative
+.mt-5
+	margin-top: 3em
+.mb-5
+	margin-bottom: 3em
+.ml-3
+	margin-left: 1em
+.mt-3
+	margin-top: 1em
+.mb-3
+	margin-bottom: 1em
+.ml-1
+	margin-left: 0.25em
+.mb-2
+	margin-bottom: .5rem
+.my-4
+	margin-top: 1.5rem
+	margin-bottom: 1.5rem
+.img-fluid
+	max-width: 100%
+	height: auto
+.js-scroll
+	transform: translateY(0)
+	opacity: 1
+	transition-duration: 1000ms
+
+.blick 
+	overflow: hidden
+	position: relative
+	&::after
+		content: ""
+		width: 100%
+		position: absolute
+		top: 0
+		height: 100%
+		background: linear-gradient(110deg,rgba(255,255,255,0) 15%,rgba(255,255,255,.75) 25%,rgba(255,255,255,0) 35%)
+		animation: bt 2.5s linear infinite
+		left: 0
+.hidden
+    position: absolute
+    left: -300vh
+    display: none
+.is-opened
+	transform: translate(0)
+h1
+	margin-block-start: 0em
+	margin-block-end: 0em
+	font-size: 2em
+	font-family: Proxima-bold
+h2
+	margin-block-start: 0em
+	margin-block-end: 0em
+	font-size: 24px
+	font-weight: 700
+h3
+	margin-block-start: 0em
+	margin-block-end: 0em
+	font-size: 22px
+	font-weight: 400
+h4, p
+	font-size: 14px
+	font-weight: 400
+	margin-block-start: 0
+	margin-block-end: 0
+a
+	cursor: pointer
+	color: black
+	text-decoration: none
+	position: relative
+	background-color: transparent
+li
+	list-style: none
+
+body
+	min-width: 320px
+	font:
+		family: Proxima, Proxima-bold, Proxima-thin //, sans-serif
+		size: 16px
+		weight: 400
+	line-height: 1.3
+	overflow-x: hidden
+	width: 100%
+	margin: 0
+.TopHeader
+	.main-contacts_phone
+	    font-size: 18px
+	&-wrapper
+		left: 0
+		top: 38%
+		position: fixed
+		z-index: 10
+		width: 80px
+		text-align: center
+		display: flex 
+		justify-content: center
+		align-content: center
+	&-all
+		transform: rotate(270deg)
+		width: 100vh
+		padding-inline-start: 0
+		text-transform: uppercase 	
+		ul
+			width: 80vh
+			display: flex
+			align-items: center	
+			justify-content: flex-end		
+	&-nav		
+		margin-right: 15px
+		li
+			margin: 0 10px	
+			padding: 0 5px
+			font-size: 12px	
+			.active
+				background-color: $black
+				color: $white
+		a
+			padding: 0 10px
+			color: $black
+			text-decoration: none						
+	&_btn
+		align-self: flex-start
+		a
+			text-decoration: none
+			display: flex
+			align-items: center
+			justify-content: center
+			color : white
+			background-color: $black
+			width: 50px
+			height: 50px
+			border-radius: 50%
+			&:hover
+				background: $grey
+		i 
+			transform: rotate(90deg)
+	&-full
+		position: fixed
+	    top: 0
+	    left: 0
+	    width: 100vw
+	    height: 100vh
+	    z-index: 9
+	    background: #151515
+	    display: flex
+	    align-items: center
+	    justify-content: center
+	    position: fixed
+	    transform: translateX(-200%)
+	    transition: all .4s cubic-bezier(.785,.135,.15,.86)
+	    background: #151515
+.main
+	background-image: url('../img/header_bg.jpg') 
+	background-position: right center
+	background-size: contain
+	min-height: 100vh
+	img
+		max-width: 350px
+	&-contacts
+		a
+			text-decoration: none
+			color: $black
+			&::after
+				position: absolute
+				content: ''
+				height: 1px
+				width: 0
+				transition-property: all
+				transition-duration: 0.2s
+				transition-timing-function: ease
+				transition-delay: 0s
+		&_phone
+			font-weight: 700
+	&-header-row
+		margin-bottom: 14%
+	&_descr
+		line-height: 1
+	&_btn
+		margin-top: 3rem
+		max-width: 550px
+		img
+			margin: 0 10px
+			width: 45px
+			height: 45px
+			filter: invert(1)
+	&_title
+		font-weight: 700
+		font-size: 40px
+.takeIt
+	background-color: #fbfafc
+	background-image: url('../img/mack_bg.jpg')  
+	background-position: 0 center
+	background-size: 50%
+	min-height: 60vh
+	&_descr
+		line-height: 1
+		margin-bottom: 16px
+	&_IPhone, &_Email
+		width: 100%
+		border: none
+		border-bottom: 1px solid #000
+		background: transparent
+		padding: 5px 0
+		margin-top: 1.5rem	
+	&_Accept
+		padding-top: 20px
+		font-size: 14px
+	&_btn
+		width: 100%
+		max-width: 550px
+		img
+			margin: 0 10px
+			height: 25px
+			width: auto
+			fill: $white
+	input
+		font-size: inherit
+.works
+	&-Slider
+		width: 100%
+		display: flex
+		flex-wrap: wrap
+		&-item
+			max-width: 50%
+			transform: translate3d(0, 0, 0)
+			position: relative
+			margin-bottom: 0
+			overflow: hidden
+			backface-visibility: hidden
+			will-change: transform
+			margin: 0 0 1rem
+			transform: translateY(0)
+			opacity: 1
+			&:hover
+				color: #fff
+				.works-Slider-item_img
+					clip-path: inset(0 0 32px 0)
+					&::after
+						opacity: .75
+				.works-Slider-item_bottom
+					opacity: .87
+					transform: translate3d(0, -4rem, 0)
+					> *
+						color: #fff
+				.works-Slider-item-text
+					transform: translate3d(0, -15.11111rem, 0)
+					> *
+						color: #fff
+			&-wrapper
+				display: flex
+				flex-direction: column
+				justify-content: flex-end
+				width: 100%
+				height: 100%
+			&_img
+				z-index: -1
+				transform: translate3d(0,0,0)
+				will-change: clip-path
+				clip-path: inset(1.11111rem 1.11111rem 5.11111rem 1.11111rem)
+				transition: all .4s cubic-bezier(.785,.135,.15,.86)
+				&::after
+					position: absolute
+					transition: all .5s (.785,.135,.15,.86)
+					top: 0
+					left: 0
+					right: 0
+					bottom: 0
+					content: ''
+					background: #000
+					opacity: 0
+			&-text
+				width: 100%
+				bottom: 0
+				position: absolute
+				padding: 0 20px 25px 20px
+				display: flex
+				align-items: center
+				justify-content: space-between
+				transition: all .5s cubic-bezier(.785,.135,.15,.86)
+				&_title
+					font-size: 20px
+					font-family: Proxima-bold
+					max-width: 70%
+				&_subtitle
+					font-size: 14px
+					color: rgba(0,0,0,.55)
+			&_bottom
+				display: flex
+				height: 13.111111rem
+				opacity: 0
+				transform: translate3d(0,0,0)
+				backface-visibility: hidden
+				will-change: transform
+				transition: all .5s cubic-bezier(.785,.135,.15,.86)
+				padding: 0 20px
+				position: absolute
+				flex-direction: column
+				bottom: 0
+				left: 0
+				right: 0
+			&-group
+				display: flex
+				justify-content: space-around
+				a
+					background: $yellow
+					color: $black
+					font-size: 12px
+					padding: 5px 10px
+					&:hover
+						background: $yellow
+				.fa-pen
+					text-decoration: none
+					display: flex
+					align-items: center
+					justify-content: center
+					color : white
+					background-color: $black
+					width: 50px
+					height: 50px
+					border-radius: 50%
+					&:hover
+						background: $grey
+			&_btn
+				
+		&-more
+			font-size: 34px
+			cursor: pointer
+.Test
+	&_progress
+		width: 100%
+		height: 11px
+		margin: 30px 0 20px
+		position: relative
+		border-radius: 15px
+		background: #fbfafc
+		overflow: hidden
+		&:after
+			
+		i
+			height: 100%
+			display: block
+			position: absolute
+			left: 0
+			top: 0
+			width: 15%
+			background-color: $yellow
+		&Step
+
+	&_answers
+		line-height: 1
+		margin-bottom: 16px
+	&-present
+		&_img
+			width: 95px
+			height: auto
+		&_title
+			color: $blue
+	&_btn
+		padding: 10px 50px
+		font-weight: 300
+	&_answers
+		display: inline-block
+	&_radio
+		position: absolute
+		z-index: -1
+		opacity: 0
+		margin: 10px 0 0 7px
+		&:checked
+			+ label:after 
+	  			opacity: 1
+		&:focus 
+			+ label:before 
+	  			opacity: 0		
+		+ label 
+			position: relative
+			padding: 0 0 0 35px
+			cursor: pointer
+			&:before 
+	  			content: ''
+	  			position: absolute
+			  	top: 0
+			  	left: 0
+			  	border: solid 4px $grey
+			  	border-radius: 50%
+			  	height: 15px
+			  	width: 15px
+			&:after 
+			  	content: ''
+	  			position: absolute
+			  	top: 0
+			  	left: 0
+			  	border: solid 4px $blue
+			  	border-radius: 50%
+			  	height: 15px
+			  	width: 15px
+			  	opacity: 0
+			  	transition: .2s		
+.Plan
+	&-table
+		max-width: 100%
+		display: flex
+		flex-wrap: nowrap
+		&_col
+			flex-basis: 22%
+			position: relative
+			z-index: 1
+			&:hover
+				&:before
+					width:calc(100% + 20px)
+					height:calc(100% + 20px)
+					box-shadow: 0 5px 15px 0 rgba(0,0,0,.2)
+			&:before
+			   	position: absolute
+			   	content: ''
+			   	width: 100%
+			   	height: 100%
+			   	margin: auto
+			   	position: absolute
+			   	top: -10%
+			   	left: -4%
+			   	bottom: -10%
+			   	right: 0
+			   	z-index: -1
+			   	transition: all .3s ease-in
+			   	box-shadow: 0 5px 15px 0 transparent
+			&_title
+				flex-basis: 34%
+		.td
+			height: 100px
+			width: 100%
+			display: flex
+			justify-content: center
+			align-content: center
+			border-bottom: 1px solid rgba(0,0,0,.25)
+			&:after
+				display: flex
+				align-self: center
+				content: ''
+				border-radius: 50%
+				height: 15px
+				width: 15px
+		&_lTitle
+			display: flex
+			height: 100px
+			align-items: center
+			text-transform: uppercase
+			padding: 5px	
+			border-bottom: 1px solid rgba(0,0,0,.25)
+			&_btn
+				color: $blue
+				font-size: 14px
+				font-weight: 400
+				border-bottom: none
+		&_tTitle
+			display: flex
+			height: 100px
+			align-items: center
+			justify-content: center
+			text-align: center
+		&_inPack
+			&:after
+				border: solid 4px $blue
+		&_outPack
+			&:after
+				border: solid 4px $grey
+		&_newPrice
+			width: 100%
+			margin-top: 30px
+		&_oldPrice
+			text-decoration: line-through
+			color: rgba(0,0,0,.3)
+			font-size: 15px
+			margin-bottom: 0
+			line-height: 1.2
+			display: block
+		.btn
+			max-width: 90%
+			margin: 10px 10px 20px
+			padding: 10px
+		&-mobiles
+			display: none
+	&_VIP
+		&:after
+			border: solid 4px $yellow
+.clients	
+	&-items
+		background: #fff
+		border-radius: 15px
+		box-shadow: 0 7px 20px rgba(25, 17, 34, .1)
+		&-wrapper
+			display: flex
+			justify-content: center
+			&_btn
+				max-width: 470px
+				font-size: 20px
+	&-item
+		height: 100%
+		padding: 2.5rem 2.125rem
+		border-left: 1px solid #f5f3f7
+		border-top: 1px solid #f5f3f7
+		box-shadow: 0 2px 0 0 #f5f3f7
+		&:hover
+			box-shadow: 0 0 5px 5px #f5f3f7
+		&_img
+			max-width: 35%
+			height: auto
+			fill: #304fff
+		&_title
+			font-weight: 700
+			margin: 8px 0
+		&_descr
+			font-size: 14px
+			color: rgba(0, 0, 0, .7)
+.comand
+	&-item
+		&_img
+			width: 100%
+		&_position
+			color: #304fff
+			margin-bottom: .275rem
+	.slick-slider
+		max-width: 100%
+.competitions
+	background: $greyDown
+	&-wrapper
+		display: flex
+		flex-wrap: wrap
+		width: 100%
+		justify-content: space-between
+		position: relative
+		&:before
+			position: absolute
+			content: ''
+			top: 50%
+			left: 50%
+			transform: translate(-50%,-50%)
+			width: 80%
+			height: 2px
+			background: #000
+			z-index: -1
+		&-life
+			width: 100%
+			display: flex
+	&_step
+		display: flex
+		background-color: $greyDown
+		display: relative
+		&:before
+			background: url(https://buroburo.ru/local/templates/main_template/images/icon-step-3.png) 0 0 no-repeat #fbfafc
+			background-position: center
+			right: 130px
+			content: ''
+			width: 88px
+			height: 58px
+	&-process
+		width: 70%
+		&_title
+			margin-bottom: 1rem
+		&_descr
+			margin-bottom: 1rem
+			font-size: 16px
+	&-numbers
+		width: 30%
+		.active
+			font-size: 32px
+			background-color: $yellow
+			border-radius: 50%
+			padding-left: 10px
+			padding-top: 8px
+	&_number
+		display: block
+		font-size: 18px
+		font-weight: 700
+		margin-bottom: 20px
+		width: 55px
+		height: 55px
+		transition: all .2s ease-in
+.footer
+	min-height: 100vh
+	&-left
+	&-Right
+		position: absolute
+		top: 0
+		right: 0
+		height: 100vh
+		display: flex
+		justify-content: center
+		align-content: center
+		flex-wrap: wrap
+		background: $greyDown
+		width: 320px
+		padding: 50px 20px
+		font-size: 14px
+		> * 
+			width: 100%
+		a
+			font-size: 18px
+	&-formSell
+		.input
+			font-size: inherit
+			margin-right: 5%
+			width: 47%
+			padding: 5px 10px
+			border: none
+			border-bottom: 1px solid rgba(0,0,0,.2)
+			&Text
+				width: 100%
+			&Phone
+				margin-right: 0
+	&_Accept
+		font-size: 12px
+	&-real
+		&_title
+			font-size: 24px
+			line-height: 1.2
+	.mobile
+		visibility: hidden
+
+
+
+@media only screen and (max-width:1200px)
+	.section
+		padding: 30px 0
+
+	.main
+		flex-direction: row	
+		align-items: flex-start
+@media only screen and (max-width:992px)
+	.competitions
+		&-wrapper
+			&:before
+				display: none
+		&_step
+			width: 100%
+			margin: 10px 0
+
+	.takeIt_title
+		margin-bottom: 300px
+	.works
+		&-Slider
+			&-item
+				max-width: 100%
+				&-text
+					&_title
+						font-size: 16px
+					&_subtitle
+						font-size: 16px
+@media only screen and (max-width:768px)
+	.Plan-table
+		&-mobiles
+			display: block!important
+			&-menu
+				display: flex
+				justify-content: space-around
+				align-items: center
+				margin-bottom: 20px
+				.active
+					box-shadow: inset 0 -2px 0 0 #486fef
+			&_tTitle
+				display: flex
+				height: 30px
+				width: auto
+				font-size: 14px
+		&_mobile
+			max-width: 99%
+			text-transform: uppercase
+			font-size: 14px
+			li
+				list-style: disc
+			h1
+				margin-left: -20px
+			span, div
+				width: 80%
+				margin-left: 5px
+		&_col_title
+			display: none
+		&_col
+			display: none
+
+	.full
+		display: none
+	.mobile
+		visibility: visible!important
+	.footer-formSell
+		max-width: 100%
+		.input
+			width: 100%
+	.clients-item_descr
+		display: none
+	.Test
+		&-present
+			margin-top: 1rem
+			order: -1
+			.pic
+				order: 3
+				img
+					display: none		
+	.main
+		flex-direction: column	
+		&_btn
+			&_wrapper
+				text-align: center
+		&-header-row
+			display: none	
+		&_title
+			font-size: 32px
+	.TopHeader-all
+		display: none
+	.header-row
+		display: block
+		padding: 8px 0px
+		position: fixed
+		left: 0
+		top: 0
+		width: 100vw
+		z-index: 10
+		box-shadow: 0 2px 5px rgba(0,0,0,.3)
+		display: flex
+		justify-content: space-between
+		align-items: center
+		background-color: $white
+		img
+			max-width: 120px
+	.Plan-table
+		&_lTitle, .td, &_tTitle
+				display: none	
+	.section
+		&:after
+			position: absolute
+			content: ''
+			bottom: 0
+			width: 100%
+			height: 1px
+			left: 0
+			background: rgba(196,196,196,.5)
+@media only screen and (max-width:576px)
+	.clients-items
+		margin-top: 20px
+	.competitions
+		&_lozung
+			display: none
+		&-wrapper
+			display: none
+			&-life
+				flex-wrap: wrap
+		&-numbers
+			display: flex
+			justify-content: center
+			order: 10
+			width: 100%
+			flex-direction: row
+			.active
+				transform: translateY(-15px)
+		&_number
+			width: 55px
+			margin: 0 10px
+		&-process
+			width: 100%
+	h1
+		font-size: 24px
+	h2
+		font-size: 18px
+	h3
+		font-size: 14px
+	.btn
+		font-size: 14px
+		padding: 10px 10px
+	.header-row
+		.main-contacts_phone
+			font-size: 90%
+	.main
+		height: 100vh		
+		flex-direction: column		
+		&-text-title
+			margin-top: 50px
+	.Plan-table
+		&-mobiles_tTitle
+			font-size: 12px
+		&_lTitle, .td, &_tTitle
+				display: none	
+	.section
+		min-height: 50vh
+		padding: 30px 0
+		&:after
+			position: absolute
+			content: ''
+			bottom: 0
+			width: 100%
+			height: 1px
+			left: 0
+			background: rgba(196,196,196,.5)
+	.takeIt
+		background-position: 50% 20%
+		background-size: 100%
+		&_title
+			margin-bottom: 250px
+			font-size: 24px
+		&_descr
+			font-size: 18px
+	.works
+		&-Slider
+			&-item
+				&-text
+					&_title
+						font-size: 15px
+					&_subtitle
+						font-size: 10px
+
+
+
+			

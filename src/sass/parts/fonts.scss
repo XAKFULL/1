@@ -1,0 +1,4 @@
+@import 'parts/_mixins.scss';
+@include font-face(Proxima, fonts/ProximaNova-Regular, null, null, eot woff ttf);
+@include font-face(Proxima-bold, fonts/ProximaNova-Bold, null, null, eot woff ttf);
+@include font-face(Proxima-thin, fonts/ProximaNova-Light, null, null, eot woff ttf);
