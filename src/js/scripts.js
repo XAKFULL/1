@@ -1,33 +1,3 @@
- $(document).ready(function(){
-	(function () {
-		if (typeof IexForms === 'undefined') return;
-
-		var $messageButton = $('.js-pform-show[data-pform-id="manager-popup"]'); // показываем через 10сек и скрываем после отправки формы
-		setTimeout(function () {
-			$messageButton.addClass('active');
-		}, 15000);
-
-		var cbConsult = {
-			'onHide': function (form) {
-				$messageButton.removeClass('active');
-			},
-			'onSuccess': function (form) {
-				$messageButton.removeClass('active');
-			}
-		};
-
-		var formsParams = {
-			'manager-popup': { config: '/libs/iex10/iexform/index.php?config=onestep&template=mnager-popup', callback: cbConsult },
-			'callback-popup': { config: '/libs/iex10/iexform/index.php?config=onestep&template=name-phone' },
-			'product': { config: '/libs/iex10/iexform/index.php?config=onestep&template=threeprot' },
-			'footer': { config: '/libs/iex10/iexform/index.php?config=onestep&template=footer' },
-			'calc': { config: '/libs/iex10/iexform/index.php?config=multistep&template=calc' },
-		};
-
-		window.iexForms = new IexForms(formsParams);
-	})();
-})
-
 $(function () {
 	/**
     * Инициализация скриптов
